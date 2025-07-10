@@ -1,0 +1,51 @@
+Id   Name   Salary   Department
+2. Alia Shams, 60000, MANAGEMENT
+3. Najam ul Saqib, 30000, SALES
+4. Ahmer Javed, 50000, HR
+5. Ali Akram, 60000, BUSINESS
+6. Sara Ahmed, 45000, IT  
+7. Bilal Saeed, 55000, MANAGEMENT
+8. Zain Raza, 40000, SALES
+9. Hassan Ali, 52000, HR
+10. Hamza Tariq, 61000, BUSINESS
+11. Fatima Noor, 47000, IT
+12. Usman Javed, 63000, MANAGEMENT
+13. Naveed Khan, 35000, SALES
+14. Farhan Iqbal, 49000, HR
+15. Tariq Mehmood, 58000, BUSINESS
+16. Hina Saleem, 46000, IT  
+17. Junaid Akram, 65000, MANAGEMENT
+18. Ali Nawaz, 34000, SALES
+19. Sadia Khan, 51000, HR
+20. Adeel Riaz, 60000, BUSINESS
+21. Zara Sheikh, 48000, IT
+22. Waqar Malik, 57000, MANAGEMENT
+23. Rizwan Ahmed, 32000, SALES
+24. Shoaib Anwar, 53000, HR
+25. Ayesha Ali, 59000, BUSINESS
+26. Noman Jameel, 44000, IT
+27. Kashif Raza, 90000, MANAGEMENT
+28. Babar Saeed, 31000, SALES
+29. Farah Javed, 54000, HR
+30. Irfan Malik, 56000, BUSINESS
+31. Sania Tariq, 43000, IT
+32. Haroon Yousuf, 64000, FINANCE
+33. Kamran Anwar, 33000, SALES
+34. Salman Qadir, 50000, HR
+35. Mehwish Irfan, 61000, BUSINESS
+36. Taha Rehman, 52000, MARKETING
+37. Haris Nadeem, 57000, FINANCE
+38. Zeeshan Iqbal, 42000, SALES
+39. Adnan Bashir, 60000, PROCUREMENT
+40. Rabia Noor, 49000, CUSTOMER SERVICE
+41. Fawad Sheikh, 56000, LOGISTICS
+42. Saad Ameer, 53000, FINANCE
+43. Areeba Shah, 51000, SALES
+44. Yasir Khan, 48000, PUBLIC RELATIONS
+45. Tariq Aziz, 59000, LEGAL
+46. Naila Zafar, 62000, DATA ANALYTICS
+47. Waqas Iqbal, 43000, CYBER SECURITY
+48. Shahbaz Khan, 54000, ENGINEERING
+49. Sumbal Ahsan, 61000, QUALITY ASSURANCE
+50. Umer Javed, 47000, CUSTOMER SERVICE
+51. Laiba Noor, 55000, PROCUREMENT
