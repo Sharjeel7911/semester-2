@@ -1,0 +1,2 @@
+Words starting with 'c' or 'C': 6
+Total characters: 31
