@@ -1,0 +1,10 @@
+Ali Ahmad, L1F17MSCS0011, 14, 14, 24, 43  
+Ayesha Khan, L1F17MSCS0022, 18, 16, 27, 40  
+Bilal Saeed, L1F17MSCS0033, 5, 8, 10, 20  
+Hina Tariq, L1F17MSCS0044, 15, 18, 29, 44  
+Usman Javed, L1F17MSCS0055, 9, 10, 12, 25  
+Fatima Noor, L1F17MSCS0066, 13, 11, 22, 41  
+Zain Raza, L1F17MSCS0077, 6, 7, 15, 19  
+Sadia Malik, L1F17MSCS0088, 19, 20, 30, 45  
+Hassan Ali, L1F17MSCS0099, 10, 12, 21, 37  
+Kashif Iqbal, L1F17MSCS0101, 3, 5, 8, 12
