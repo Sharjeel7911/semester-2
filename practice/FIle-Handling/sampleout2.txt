@@ -1,0 +1,6 @@
+Student Name Fees
+
+Shourn,54000
+Francis,44000
+Clara,46000
+Kash,54000
