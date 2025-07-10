@@ -1,0 +1,8 @@
+No.	Course	Grade	Cr.Hr	GPA
+1	PF	A-	3.0	3.7
+2	DLD	B+	4.0	3.2
+3	ALG	C+	2.0	2.7
+4	ENG	A	3.0	4.0
+5	CVC	C	2.0	2.0
+
+

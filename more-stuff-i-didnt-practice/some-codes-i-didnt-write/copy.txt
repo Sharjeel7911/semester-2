@@ -1,0 +1,1 @@
+This file contains any types of values e.g. 124, 45.67; 99.345, p, q, r, s,t,***, &@#$% 
