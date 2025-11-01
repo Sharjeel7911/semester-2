@@ -1,0 +1,1 @@
+This is a good coding problem. That can be solved using C++ file library. This includes iostream and fstream libraries.

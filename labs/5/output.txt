@@ -1,1 +1,0 @@
-The cube of 5 is: 125

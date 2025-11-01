@@ -1,0 +1,7 @@
+No. Registration      First Name   Last Name  CGPA
+1   L1F22BSCS0001     Ahmad        Usman      2.7
+2   L1F22BSCS0002     Ali          Shaukat    3.7
+3   L1F22BSCS0003     Farooq       Asif       2.2
+4   L1F22BSCS0004     Wasif        Ali        3.1
+5   L1F22BSCS0005     Nasir        Khan       3.5
+

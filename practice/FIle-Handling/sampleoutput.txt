@@ -1,6 +1,0 @@
-Student Name             Student id          Department          
-Amar                     1                   It                  
-Amar akbar anthony       2                   It                  
-Ali                      3                   It
-Akram                    4                   It
-Alyan                    5                   It

@@ -1,7 +1,0 @@
-Sum = 42.9
-Average = 3.9
-Maximum = 5.5
-Minimum = 2.2
-Frequency of 2.2 is 2
-Frequency of 3.3 is 3
-Frequency of 4.4 is 4

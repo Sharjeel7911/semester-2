@@ -1,0 +1,37 @@
+I, 1
+go, 2
+to, 2
+church, 6
+only, 4
+when, 4
+I, 1
+have, 4
+to, 2
+shoot, 5
+a, 1
+scene, 5
+in, 2
+church, 6
+or, 2
+for, 3
+an, 2
+aesthetic, 9
+or, 2
+nostalgic, 9
+reason, 6
+For, 3
+faith, 5
+you, 3
+can, 3
+go, 2
+to, 2
+a, 1
+woman, 5
+Maybe, 5
+that, 4
+is, 2
+more, 4
+religious, 9
+
+Longest word(s): aesthetic, nostalgic, religious, 9 characters
+Total words: 34

@@ -1,7 +1,0 @@
-Vowel Frequency Analysis
------------------------------  
-a: 3
-e: 7
-i: 7
-o: 2
-u: 1
