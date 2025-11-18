@@ -1,6 +1,6 @@
 # Course Instructors
 
-## Programming Fundametals 
+## Programming Fundametals  
 - **Lecture:** Faiza Khadim 
 - **Lab:** Qaisar Nadeem
 
