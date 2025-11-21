@@ -2,7 +2,7 @@
 
 ## Programming Fundametals  
 - **Lecture:** Faiza Khadim 
-- **Lab:** Qaisar Nadeem
+- **Lab:** Qaisar Nadeem / Roha Irfan
 
 ## Digital Logic Design
 - **Lecture:** Ammar Hassan
