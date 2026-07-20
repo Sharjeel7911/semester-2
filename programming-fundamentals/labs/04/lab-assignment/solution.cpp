@@ -1,27 +1,22 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 using namespace std;
 
-void table()
-{
+void table() {
 	int n;
 	cout << "Enter a number to print its table: ";
 	cin >> n;
-	for (int i = 1; i <= 10; i++)
-	{
+	for (int i = 1; i <= 10; i++) {
 		cout << n << " * " << i << " = " << n * i << endl;
 	}
 }
-void divisor()
-{
+void divisor() {
 	int n;
 	cout << "Enter a number to find its divisors: ";
 	cin >> n;
 	cout << "Divisors of " << n << " are: ";
-	for (int i = 1; i <= n / 2; i++)
-	{
-		if (n % i == 0)
-		{
+	for (int i = 1; i <= n / 2; i++) {
+		if (n % i == 0) {
 			cout << i << " ";
 		}
 	}
@@ -46,12 +41,9 @@ void sorting() {
 		cin >> array[i];
 	}
 	// Bubble sorting
-	for (int i = 0; i < n - 1; i++)
-	{
-		for (int j = 0; j < n - i - 1; j++)
-		{
-			if (array[j] > array[j + 1])
-			{
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 0; j < n - i - 1; j++) {
+			if (array[j] > array[j + 1]) {
 				int temp = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
@@ -59,8 +51,7 @@ void sorting() {
 		}
 	}
 	cout << "Sorted numbers are: ";
-	for (int i = 0; i < n; i++)
-	{
+	for (int i = 0; i < n; i++) {
 		cout << array[i] << " ";
 	}
 	cout << endl;
@@ -70,8 +61,7 @@ void power() {
 	cout << "Enter two numbers" << endl;
 	cin >> a >> b;
 	int power = 1;
-	for (int i = 1; i <= b; i++)
-	{
+	for (int i = 1; i <= b; i++) {
 		power = power * a;
 	}
 	cout << "Power of " << a << "^" << b << " is: " << power << endl;
@@ -89,7 +79,6 @@ void numberseparate() {
 	int array[100] = {};
 	int i = 0;
 	while (n > 0) {
-
 		array[i] = n % 10;
 		n = n / 10;
 		i++;
@@ -107,11 +96,11 @@ void convert() {
 	int length = 0;
 	while (array[length] != '\0') {
 		length++;
-	}	for (int i = 0; i < length; i++) {
+	}
+	for (int i = 0; i < length; i++) {
 		if (array[i] >= 'a' && array[i] <= 'z') {
 			array[i] = array[i] - 32;
-		}
-		else if (array[i] >= 'A' && array[i] <= 'Z') {
+		} else if (array[i] >= 'A' && array[i] <= 'Z') {
 			array[i] = array[i] + 32;
 		}
 	}
@@ -124,7 +113,6 @@ void findreverse() {
 	int result = 0;
 	int i = 0;
 	while (n > 0) {
-
 		result = n % 10;
 		n = n / 10;
 		cout << result;
@@ -147,14 +135,13 @@ void palindrome() {
 	}
 	if (reverse == temp) {
 		cout << "The number is palindrome." << endl;
-	}
-	else {
+	} else {
 		cout << "The number is not palindrome." << endl;
 	}
 }
 void numberlength() {
-	fstream read("word_frequency.txt", ios::in);
-	fstream write("word_length.txt", ios::out);
+	fstream read("word-frequency.txt", ios::in);
+	fstream write("word-length.txt", ios::out);
 	if (!read.is_open() || !write.is_open()) {
 		cout << "Error opening file." << endl;
 		return;
@@ -187,8 +174,7 @@ void numberlength() {
 				i++;
 			}
 			maxword[i] = '\0';
-		}
-		else if (count == max) {
+		} else if (count == max) {
 			int i = 0, j = 0;
 			while (maxword[j] != '\0') {
 				j++;
@@ -210,7 +196,7 @@ void numberlength() {
 
 	read.close();
 	write.close();
-	cout << "Word lengths saved in word_length.txt" << endl;
+	cout << "Word lengths saved in word-length.txt" << endl;
 }
 void factorial() {
 	cout << "Enter a number to find its factorial: ";
@@ -224,7 +210,6 @@ void factorial() {
 }
 
 int main() {
-
 	do {
 		cout << "Welcome to the program" << endl;
 		cout << "Press T for printing table" << endl;
@@ -244,35 +229,25 @@ int main() {
 
 		if (x == 't' || x == 'T') {
 			table();
-		}
-		else if (x == 'd' || x == 'D') {
+		} else if (x == 'd' || x == 'D') {
 			divisor();
-		}
-		else if (x == 's' || x == 'S') {
+		} else if (x == 's' || x == 'S') {
 			sorting();
-		}
-		else if (x == 'a' || x == 'A') {
+		} else if (x == 'a' || x == 'A') {
 			power();
-		}
-		else if (x == 'n' || x == 'N') {
+		} else if (x == 'n' || x == 'N') {
 			numberseparate();
-		}
-		else if (x == 'c' || x == 'C') {
+		} else if (x == 'c' || x == 'C') {
 			convert();
-		}
-		else if (x == 'r' || x == 'R') {
+		} else if (x == 'r' || x == 'R') {
 			findreverse();
-		}
-		else if (x == 'p' || x == 'P') {
+		} else if (x == 'p' || x == 'P') {
 			palindrome();
-		}
-		else if (x == 'l' || x == 'L') {
+		} else if (x == 'l' || x == 'L') {
 			numberlength();
-		}
-		else if (x == 'f' || x == 'F') {
+		} else if (x == 'f' || x == 'F') {
 			factorial();
-		}
-		else {
+		} else {
 			cout << "Invalid choice!" << endl;
 		}
 
@@ -281,8 +256,7 @@ int main() {
 		cin >> choice;
 		if (choice == 'n' || choice == 'N') {
 			break;
-		}
-		else if (choice != 'y' && choice != 'Y') {
+		} else if (choice != 'y' && choice != 'Y') {
 			continue;
 		}
 	} while (true);

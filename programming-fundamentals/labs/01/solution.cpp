@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-//Task 1
+// Task 1
 
 int main1() {
-	char array[100];  
+	char array[100];
 	cout << "Enter a word: ";
-	cin >> array;  
+	cin >> array;
 
 	int length = 0;
 	while (array[length] != '\0') {
@@ -26,15 +26,14 @@ int main1() {
 
 	if (isPalindrome) {
 		cout << "The word is a palindrome." << endl;
-	}
-	else {
+	} else {
 		cout << "The word is NOT a palindrome." << endl;
 	}
 
 	return 0;
 }
 
-//Task 2
+// Task 2
 
 int main2() {
 	int array[3] = {};
@@ -59,7 +58,7 @@ int main2() {
 	return 0;
 }
 
-//Task 3
+// Task 3
 
 int main3() {
 	int array[10] = {};
@@ -68,9 +67,8 @@ int main3() {
 	for (int i = 0; i < 10; i++) {
 		cin >> array[i];
 		if (i == 2) {
-			 x = array[i];
-		}
-		else if (i == 5) {
+			x = array[i];
+		} else if (i == 5) {
 			y = array[i];
 		}
 	}
@@ -78,8 +76,7 @@ int main3() {
 	for (int i = 0; i < 10; i++) {
 		if (i == 2) {
 			array[i] = y;
-		}
-		else if (i == 5) {
+		} else if (i == 5) {
 			array[i] = x;
 		}
 	}
@@ -92,7 +89,7 @@ int main3() {
 	return 0;
 }
 
-//Task 4
+// Task 4
 
 int main4() {
 	int array[10] = {};
@@ -107,9 +104,8 @@ int main4() {
 		if (array[i] > max) {
 			secondmax = max;
 			max = array[i];
-		}
-		else if (array[i] > secondmax && array[i] != max) {
-			secondmax = array[i]; 
+		} else if (array[i] > secondmax && array[i] != max) {
+			secondmax = array[i];
 		}
 		if (array[i] < min) {
 			min = array[i];
@@ -117,8 +113,7 @@ int main4() {
 	}
 	if (secondmax == max) {
 		cout << "No second largest number because all elements are same." << endl;
-	}
-	else {
+	} else {
 		cout << "Maximum: " << max << endl;
 		cout << "Second Largest: " << secondmax << endl;
 		cout << "Minimum: " << min << endl;
@@ -126,7 +121,7 @@ int main4() {
 	return 0;
 }
 
-//Task 5
+// Task 5
 
 int main5() {
 	int array[10] = {};
@@ -140,7 +135,6 @@ int main5() {
 
 	bool ispresent = false;
 	for (int i = 0; i < 10; i++) {
-
 		if (num == array[i]) {
 			cout << "Index of number is: " << i << endl;
 			ispresent = true;

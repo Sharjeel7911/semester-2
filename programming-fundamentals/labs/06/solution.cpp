@@ -1,5 +1,5 @@
-#include<iostream>
-#include<fstream>
+#include <fstream>
+#include <iostream>
 using namespace std;
 
 void readFromFile(char sentence[]);
@@ -9,29 +9,27 @@ int countDigits(const char sentence[]);
 int countSpaces(const char sentence[]);
 void displayStats(int vowels, int consonants, int digits, int spaces);
 
-
 int main() {
-    char sentence[100];
+	char sentence[100];
 
-    readFromFile(sentence);
-    int vowels = countVowels(sentence);
-    int consonants = countConsonants(sentence);
-    int digits = countDigits(sentence);
-    int spaces = countSpaces(sentence);
+	readFromFile(sentence);
+	int vowels = countVowels(sentence);
+	int consonants = countConsonants(sentence);
+	int digits = countDigits(sentence);
+	int spaces = countSpaces(sentence);
 
-    displayStats(vowels, consonants, digits, spaces);
+	displayStats(vowels, consonants, digits, spaces);
 
-    return 0;
+	return 0;
 }
 
 void readFromFile(char sentence[]) {
-	fstream read("Input.txt",ios::in);
+	fstream read("input.txt", ios::in);
 	if (read) {
-		read.ignore(); 
+		read.ignore();
 		read.getline(sentence, 100);
 		read.close();
-	}
-	else {
+	} else {
 		cout << "Error opening file." << endl;
 	}
 }

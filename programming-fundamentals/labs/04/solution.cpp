@@ -1,12 +1,11 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
+int main() {
 	fstream read("input.txt", ios::in);
-	fstream write("vowel_count.txt", ios::out);
+	fstream write("vowel-count.txt", ios::out);
 	if (!read.is_open() || !write.is_open()) {
 		cout << "Error while openning the file." << endl;
 		return 1;
@@ -15,20 +14,15 @@ int main()
 	char ch;
 	int a = 0, e = 0, i = 0, o = 0, u = 0;
 	while (read.get(ch)) {
-
 		if (ch == 'a' || ch == 'A') {
 			a++;
-		}
-		else if (ch == 'e' || ch == 'E') {
+		} else if (ch == 'e' || ch == 'E') {
 			e++;
-		}
-		else if (ch == 'i' || ch == 'I') {
+		} else if (ch == 'i' || ch == 'I') {
 			i++;
-		}
-		else if (ch == 'o' || ch == 'O') {
+		} else if (ch == 'o' || ch == 'O') {
 			o++;
-		}
-		else if (ch == 'u' || ch == 'U') {
+		} else if (ch == 'u' || ch == 'U') {
 			u++;
 		}
 	}
@@ -54,7 +48,7 @@ int main()
 	if (o > max) max = o;
 	if (u > max) max = u;
 
-	cout << "Vowel count saved in 'vowel_count.txt'" << endl;
+	cout << "Vowel count saved in 'vowel-count.txt'" << endl;
 	cout << "Most frequent vowel(s): ";
 
 	bool first = true;

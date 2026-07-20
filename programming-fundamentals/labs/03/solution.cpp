@@ -1,8 +1,8 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 using namespace std;
 
-//Task 1
+// Task 1
 
 int main1() {
 	fstream read;
@@ -18,7 +18,7 @@ int main1() {
 	return 0;
 }
 
-//Task 2
+// Task 2
 
 int main2() {
 	fstream read;
@@ -34,7 +34,7 @@ int main2() {
 	return 0;
 }
 
-//Task 3
+// Task 3
 
 int main3() {
 	fstream read;
@@ -51,15 +51,14 @@ int main3() {
 	cout << "Number of lines in the file: " << count << endl;
 	read.close();
 	return 0;
-
 }
 
-//Task 4
+// Task 4
 
 int main4() {
 	fstream write;
-	
-	write.open("source.txt",ios::out);
+
+	write.open("source.txt", ios::out);
 	if (write.is_open()) {
 		write << "https://wira.adem.my.id/?source=youtube&title=UrIFS3ffJU&type=mp4&download=aHR0cHM6Ly9ocmVmLmxpLz9odHRwczovL3ZkNDA3Lm9rY2RuLnJ1Lz9leHBpcmVzPTE3NDI4MDMxMzk0Mzcmc3JjSXA9MTkzLjE2MC43OS4xMiZwcj0xMCZzcmNBZz1DSFJPTUUmbXM9NDUuMTM2LjIwLjQwJnR5cGU9MyZzdWJJZD02NjQyMTY3MzE5MDg3JnNpZz0waE56VHUzYy1ZbyZjdD0wJnVybHM9NDUuMTM2LjIyLjQ5JmNsaWVudFR5cGU9MCZpZD02NjQyMTY3MzE5MDg3" << endl;
 		write.close();
@@ -84,21 +83,20 @@ int main4() {
 	return 0;
 }
 
-//Task 5
+// Task 5
 
 int main5() {
 	fstream read;
-	read.open("data1.txt", ios::in);
+	read.open("data-01.txt", ios::in);
 	if (!read.is_open()) {
 		cout << "Error opening the file" << endl;
 		return 1;
 	}
 	char ch;
 	read.get(ch);
-	if (fread) { 
+	if (fread) {
 		cout << "First character in file: " << ch << endl;
-	}
-	else {
+	} else {
 		cout << "File is empty or an error occurred!" << endl;
 	}
 	read.close();

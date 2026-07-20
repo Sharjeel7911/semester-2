@@ -1,8 +1,8 @@
+#include <fstream>
 #include <iostream>
-#include<fstream>
 using namespace std;
 
-//Task 1
+// Task 1
 
 int main1() {
 	int array[100] = {};
@@ -19,17 +19,17 @@ int main1() {
 	}
 
 	for (int i = 0; i < size; i += 2) {
-		sum += *(array + i);  
+		sum += *(array + i);
 	}
 
 	cout << "Sum of alternate elements: " << sum << endl;
 	return 0;
 }
 
-//Task 2
+// Task 2
 
 int main2() {
-	fstream read("Data.txt", ios::in);
+	fstream read("data.txt", ios::in);
 	if (!read) {
 		cout << "Error: Unable to open file." << endl;
 		return 1;
@@ -62,7 +62,7 @@ int main2() {
 	return 0;
 }
 
-//Task 3
+// Task 3
 
 int main3() {
 	int array[100] = {};
@@ -83,7 +83,7 @@ int main3() {
 		if (*(array + j) % 2 == 0) {
 			*(arr + count) = *(array + j);
 			count++;
-		}	
+		}
 	}
 
 	cout << "Even numbers are: ";
@@ -96,10 +96,10 @@ int main3() {
 	return 0;
 }
 
-//Task 4
+// Task 4
 
 int main4() {
-	fstream read("Nums.txt", ios::in);
+	fstream read("nums.txt", ios::in);
 	if (!read) {
 		cout << "Error: Unable to open file." << endl;
 		return 1;
@@ -119,7 +119,7 @@ int main4() {
 		*(array + (count - 1 - i)) = temp;
 	}
 
-	fstream write("Reversed.txt", ios::out);
+	fstream write("reversed.txt", ios::out);
 	if (!write) {
 		cout << "Error: Unable to create output file." << endl;
 		return 1;
@@ -129,14 +129,14 @@ int main4() {
 		write << *(array + i) << " ";
 	}
 
-	write << endl << count; 
+	write << endl << count;
 	write.close();
 
 	cout << "Reversed array and count written to 'reversed.txt'." << endl;
 	return 0;
 }
 
-//Task 5
+// Task 5
 
 int main5() {
 	int array[100] = {};
@@ -167,7 +167,7 @@ int main5() {
 	return 0;
 }
 
-//Task 6
+// Task 6
 
 int main6() {
 	int* ptr = new int;
@@ -182,7 +182,7 @@ int main6() {
 	return 0;
 }
 
-//Task 7
+// Task 7
 
 int findMaxPointerr(int* arr, int size) {
 	int max = *arr;

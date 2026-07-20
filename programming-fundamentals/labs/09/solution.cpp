@@ -1,13 +1,12 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 using namespace std;
 
-//Task 1: Find Maximum from File 
+// Task 1: Find Maximum from File
 void readsize(int& size);
 void readfromfile(int array[], int size);
 int findmax(int array[], int size);
-int main1()
-{
+int main1() {
 	int size = 0;
 	readsize(size);
 	int* array = new int[size];
@@ -52,7 +51,7 @@ int findmax(int array[], int size) {
 	return max;
 }
 
-//Task 2: Search Number in File Array
+// Task 2: Search Number in File Array
 void readsizeoffile(int& size);
 void numbertofind(int array[], int size);
 int main2() {
@@ -91,29 +90,25 @@ void numbertofind(int array[], int size) {
 		}
 	}
 	cout << "Number not found in Data.txt" << endl;
-
 }
 
-//Task 3: Square of Numbers (Regrow)
+// Task 3: Square of Numbers (Regrow)
 int* readregrow(const char* filename, int& size);
 int* squarearray(const int* input, int size);
 int main3() {
 	int size = 0;
 	int* original = readregrow("Data.txt", size);
 
-	if (original == nullptr)
-		return 1;
+	if (original == nullptr) return 1;
 
 	int* squared = squarearray(original, size);
 
 	cout << "Original Data: ";
-	for (int i = 0; i < size; i++)
-		cout << original[i] << " ";
+	for (int i = 0; i < size; i++) cout << original[i] << " ";
 	cout << endl;
 
 	cout << "Squared Data:  ";
-	for (int i = 0; i < size; i++)
-		cout << squared[i] << " ";
+	for (int i = 0; i < size; i++) cout << squared[i] << " ";
 	cout << endl;
 
 	delete[] original;
@@ -137,20 +132,17 @@ int* readregrow(const char* filename, int& size) {
 		if (size == capacity) {
 			capacity *= 2;
 			int* new_array = new int[capacity];
-			for (int i = 0; i < size; i++)
-				new_array[i] = array[i];
+			for (int i = 0; i < size; i++) new_array[i] = array[i];
 			delete[] array;
 			array = new_array;
 		}
 		array[size++] = num;
 	}
 
-
 	read.close();
 
 	int* final_array = new int[size];
-	for (int i = 0; i < size; i++)
-		final_array[i] = array[i];
+	for (int i = 0; i < size; i++) final_array[i] = array[i];
 	delete[] array;
 	array = final_array;
 	return array;
@@ -164,8 +156,7 @@ int* squarearray(const int* input, int size) {
 		if (count == capacity) {
 			capacity *= 2;
 			int* new_array = new int[capacity];
-			for (int i = 0; i < count; i++)
-				new_array[i] = squares[i];
+			for (int i = 0; i < count; i++) new_array[i] = squares[i];
 			delete[] squares;
 			squares = new_array;
 		}
@@ -173,14 +164,13 @@ int* squarearray(const int* input, int size) {
 	}
 
 	int* final_array = new int[count];
-	for (int i = 0; i < count; i++)
-		final_array[i] = squares[i];
+	for (int i = 0; i < count; i++) final_array[i] = squares[i];
 	delete[] squares;
 	squares = final_array;
 	return squares;
 }
 
-//Task 4: Replace Values by Subtracting from Max 
+// Task 4: Replace Values by Subtracting from Max
 void subtractfrommax(int array[], int size, int max);
 int main4() {
 	int size = 0;
@@ -207,7 +197,7 @@ void subtractfrommax(int array[], int size, int max) {
 	}
 }
 
-//Task 5: Remove Number
+// Task 5: Remove Number
 void removenum(int array[], int size);
 int main5() {
 	int size = 0;
@@ -239,7 +229,7 @@ void removenum(int array[], int size) {
 	}
 }
 
-//Task 6: Separate One-digit and Two-digit 
+// Task 6: Separate One-digit and Two-digit
 void separateint(int* singled, int* doubled, int* original, int size);
 void display(int* singled, int count, int* doubled, int counter);
 int main6() {
@@ -253,8 +243,8 @@ int main6() {
 	for (int i = 0; i < size; i++) {
 		if (*(original + i) / 10 == 0) {
 			count++;
-		}
-		else counter++;
+		} else
+			counter++;
 	}
 	int* singled = new int[count];
 	int* doubled = new int[counter];
@@ -273,37 +263,32 @@ void separateint(int* singled, int* doubled, int* original, int size) {
 	for (int i = 0; i < size; i++) {
 		if (*(original + i) / 10 == 0) {
 			*(singled + s++) = *(original + i);
-		}
-		else {
+		} else {
 			*(doubled + d++) = *(original + i);
 		}
 	}
 }
 void display(int* singled, int count, int* doubled, int counter) {
 	cout << "One-digit Numbers: ";
-	for (int i = 0; i < count; i++)
-		cout << singled[i] << " ";
+	for (int i = 0; i < count; i++) cout << singled[i] << " ";
 	cout << endl;
 
 	cout << "Two-digit Numbers: ";
-	for (int i = 0; i < counter; i++)
-		cout << doubled[i] << " ";
+	for (int i = 0; i < counter; i++) cout << doubled[i] << " ";
 	cout << endl;
 }
 
-//Task 7: Word Lengths from File
+// Task 7: Word Lengths from File
 int* readwordlengths(const char* filename, int& size);
 bool isalphanumeric(char ch);
 int main7() {
 	int size = 0;
 	int* word_lengths = readwordlengths("Text.txt", size);
 
-	if (word_lengths == nullptr)
-		return 1;
+	if (word_lengths == nullptr) return 1;
 
 	cout << "Word Lengths: ";
-	for (int i = 0; i < size; i++)
-		cout << word_lengths[i] << " ";
+	for (int i = 0; i < size; i++) cout << word_lengths[i] << " ";
 	cout << endl;
 
 	delete[] word_lengths;
@@ -326,13 +311,11 @@ int* readwordlengths(const char* filename, int& size) {
 	while (read.get(ch)) {
 		if (isalphanumeric(ch)) {
 			wordLength++;
-		}
-		else if (wordLength > 0) {
+		} else if (wordLength > 0) {
 			if (size == capacity) {
 				capacity *= 2;
 				int* new_array = new int[capacity];
-				for (int i = 0; i < size; i++)
-					new_array[i] = lengths[i];
+				for (int i = 0; i < size; i++) new_array[i] = lengths[i];
 				delete[] lengths;
 				lengths = new_array;
 			}
@@ -345,8 +328,7 @@ int* readwordlengths(const char* filename, int& size) {
 		if (size == capacity) {
 			capacity *= 2;
 			int* new_array = new int[capacity];
-			for (int i = 0; i < size; i++)
-				new_array[i] = lengths[i];
+			for (int i = 0; i < size; i++) new_array[i] = lengths[i];
 			delete[] lengths;
 			lengths = new_array;
 		}
@@ -355,19 +337,14 @@ int* readwordlengths(const char* filename, int& size) {
 	read.close();
 
 	int* final_array = new int[size];
-	for (int i = 0; i < size; i++)
-		final_array[i] = lengths[i];
+	for (int i = 0; i < size; i++) final_array[i] = lengths[i];
 	delete[] lengths;
 	lengths = final_array;
 	return lengths;
 }
-bool isalphanumeric(char ch) {
-	return (ch >= 'A' && ch <= 'Z') ||
-		(ch >= 'a' && ch <= 'z') ||
-		(ch >= '0' && ch <= '9');
-}
+bool isalphanumeric(char ch) { return (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9'); }
 
-//Task 8: Separate Even and Odd Numbers
+// Task 8: Separate Even and Odd Numbers
 void separateevenodd(int* singled, int* doubled, int* original, int size);
 void displayx(int* even, int count, int* odd, int counter);
 int main8() {
@@ -381,8 +358,8 @@ int main8() {
 	for (int i = 0; i < size; i++) {
 		if (*(original + i) % 2 == 0) {
 			count++;
-		}
-		else counter++;
+		} else
+			counter++;
 	}
 	int* even = new int[count];
 	int* odd = new int[counter];
@@ -401,25 +378,22 @@ void separateevenodd(int* even, int* odd, int* original, int size) {
 	for (int i = 0; i < size; i++) {
 		if (*(original + i) % 2 == 0) {
 			*(even + e++) = *(original + i);
-		}
-		else {
+		} else {
 			*(odd + o++) = *(original + i);
 		}
 	}
 }
 void displayx(int* even, int count, int* odd, int counter) {
 	cout << "Even Numbers: ";
-	for (int i = 0; i < count; i++)
-		cout << even[i] << " ";
+	for (int i = 0; i < count; i++) cout << even[i] << " ";
 	cout << endl;
 
 	cout << "Odd Numbers: ";
-	for (int i = 0; i < counter; i++)
-		cout << odd[i] << " ";
+	for (int i = 0; i < counter; i++) cout << odd[i] << " ";
 	cout << endl;
 }
 
-//Task 9: Sort Even Ascending & Odd Descending order
+// Task 9: Sort Even Ascending & Odd Descending order
 void ascending(int* array, int size);
 void descending(int* array, int size);
 void recombine(int* original, int* even, int count, int* odd, int counter);
@@ -434,8 +408,8 @@ int main9() {
 	for (int i = 0; i < size; i++) {
 		if (*(original + i) % 2 == 0) {
 			count++;
-		}
-		else counter++;
+		} else
+			counter++;
 	}
 	int* even = new int[count];
 	int* odd = new int[counter];
@@ -473,19 +447,16 @@ void descending(int* array, int size) {
 			}
 }
 void recombine(int* original, int* even, int count, int* odd, int counter) {
-	for (int i = 0; i < count; i++)
-		original[i] = even[i];
-	for (int i = 0; i < counter; i++)
-		original[count + i] = odd[i];
+	for (int i = 0; i < count; i++) original[i] = even[i];
+	for (int i = 0; i < counter; i++) original[count + i] = odd[i];
 }
 void displayy(int* original, int size) {
 	cout << "Sorted Combined Array: ";
-	for (int i = 0; i < size; i++)
-		cout << original[i] << " ";
+	for (int i = 0; i < size; i++) cout << original[i] << " ";
 	cout << endl;
 }
 
-//Task 10: Shift Even Left, Odd Right
+// Task 10: Shift Even Left, Odd Right
 int main10() {
 	int size = 0;
 	int* original = readregrow("Data.txt", size);
@@ -514,7 +485,7 @@ int main10() {
 	return 0;
 }
 
-//Task 11: Shift and Remove Vowel 
+// Task 11: Shift and Remove Vowel
 bool isvowel(char ch);
 void shiftandshrink(char*& arr, int& size);
 char* readcharacters(const char* filename, int& size);
@@ -524,7 +495,7 @@ int main11() {
 	char* text = readcharacters("Text.txt", size);
 	if (text == nullptr) return 1;
 
-	int n = size; 
+	int n = size;
 
 	for (int i = 0; i < n && size > 0; i++) {
 		shiftandshrink(text, size);
@@ -534,20 +505,15 @@ int main11() {
 	delete[] text;
 	return 0;
 }
-bool isvowel(char ch) {
-	return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
-		ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U';
-}
+bool isvowel(char ch) { return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U'; }
 void shiftandshrink(char*& arr, int& size) {
-	char last = arr[size - 1]; 
-	for (int i = 1; i < size; i++)
-		arr[i - 1] = arr[i];
+	char last = arr[size - 1];
+	for (int i = 1; i < size; i++) arr[i - 1] = arr[i];
 
 	if (isvowel(last)) {
-		size--;  
+		size--;
 		char* newarray = new char[size];
-		for (int i = 0; i < size; i++)
-			newarray[i] = arr[i];
+		for (int i = 0; i < size; i++) newarray[i] = arr[i];
 		delete[] arr;
 		arr = newarray;
 	}
@@ -565,12 +531,11 @@ char* readcharacters(const char* filename, int& size) {
 	char ch;
 
 	while (read.get(ch)) {
-		if (ch == '\n' || ch == '\r') continue; 
+		if (ch == '\n' || ch == '\r') continue;
 		if (size == capacity) {
 			capacity *= 2;
 			char* temp = new char[capacity];
-			for (int i = 0; i < size; i++)
-				temp[i] = arr[i];
+			for (int i = 0; i < size; i++) temp[i] = arr[i];
 			delete[] arr;
 			arr = temp;
 		}
@@ -582,13 +547,11 @@ char* readcharacters(const char* filename, int& size) {
 }
 void displayz(char* arr, int size) {
 	cout << "Modified Text: ";
-	for (int i = 0; i < size; i++)
-		cout << arr[i];
+	for (int i = 0; i < size; i++) cout << arr[i];
 	cout << endl;
 }
 
-
-//Task 12: Rearrange Words 
+// Task 12: Rearrange Words
 int myStrLen(const char* s) {
 	int len = 0;
 	while (s[len] != '\0') len++;
@@ -606,8 +569,7 @@ bool isDigitWord(const char* word) {
 	int len = myStrLen(word);
 	if (len == 0) return false;
 	for (int i = 0; i < len; i++) {
-		if (word[i] < '0' || word[i] > '9')
-			return false;
+		if (word[i] < '0' || word[i] > '9') return false;
 	}
 	return true;
 }
@@ -615,8 +577,7 @@ bool isAlphaWord(const char* word) {
 	int len = myStrLen(word);
 	if (len == 0) return false;
 	for (int i = 0; i < len; i++) {
-		if (!((word[i] >= 'A' && word[i] <= 'Z') || (word[i] >= 'a' && word[i] <= 'z')))
-			return false;
+		if (!((word[i] >= 'A' && word[i] <= 'Z') || (word[i] >= 'a' && word[i] <= 'z'))) return false;
 	}
 	return true;
 }
@@ -632,9 +593,8 @@ char** readRegrow(const char* filename, int& size) {
 	while (fin >> buffer) {
 		if (size == capacity) {
 			int newCap = capacity == 0 ? 2 : capacity * 2;
-			char** temp = new char* [newCap];
-			for (int i = 0; i < size; i++)
-				temp[i] = arr[i];
+			char** temp = new char*[newCap];
+			for (int i = 0; i < size; i++) temp[i] = arr[i];
 			delete[] arr;
 			arr = temp;
 			capacity = newCap;
@@ -652,23 +612,19 @@ void separateWords(char** digitWords, char** alphaWords, char** original, int si
 	for (int i = 0; i < size; i++) {
 		if (isDigitWord(original[i])) {
 			digitWords[d++] = original[i];
-		}
-		else if (isAlphaWord(original[i])) {
+		} else if (isAlphaWord(original[i])) {
 			alphaWords[a++] = original[i];
 		}
-		
 	}
 }
 void displayWords(char** digitWords, int digitCount, char** alphaWords, int alphaCount) {
 	for (int i = 0; i < digitCount; i++) {
 		cout << digitWords[i];
-		if (i != digitCount - 1 || alphaCount > 0)
-			cout << " ";
+		if (i != digitCount - 1 || alphaCount > 0) cout << " ";
 	}
 	for (int i = 0; i < alphaCount; i++) {
 		cout << alphaWords[i];
-		if (i != alphaCount - 1)
-			cout << " ";
+		if (i != alphaCount - 1) cout << " ";
 	}
 	cout << endl;
 }
@@ -688,8 +644,8 @@ int main() {
 			alphaCount++;
 	}
 
-	char** digitWords = new char* [digitCount];
-	char** alphaWords = new char* [alphaCount];
+	char** digitWords = new char*[digitCount];
+	char** alphaWords = new char*[alphaCount];
 
 	separateWords(digitWords, alphaWords, original, size);
 

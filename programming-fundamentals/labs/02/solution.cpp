@@ -1,6 +1,6 @@
-#include <iostream>
 #include <fstream>
-using namespace std; 
+#include <iostream>
+using namespace std;
 
 int main1() {
 	ofstream write;
@@ -16,11 +16,11 @@ int main1() {
 
 int main2() {
 	ofstream write;
-	write.open("user_data.txt", ios::out);
+	write.open("user-data.txt", ios::out);
 	if (write.is_open()) {
 		cout << "Enter your name." << endl;
 		char name[20];
-		cin.getline(name,20);
+		cin.getline(name, 20);
 		write << "Name: " << name << endl;
 		cout << "Enter your age." << endl;
 		int age = 0;
@@ -28,7 +28,7 @@ int main2() {
 		write << "Age: " << age;
 		write.close();
 	}
-	cout << "User data saved to 'user_data.txt' successfully!";
+	cout << "User data saved to 'user-data.txt' successfully!";
 	return 0;
 }
 
@@ -63,8 +63,8 @@ int main5() {
 	ofstream write1;
 	ofstream write2;
 
-	write1.open("Name.txt", ios::out);
-	write2.open("Age.txt", ios::out);
+	write1.open("name.txt", ios::out);
+	write2.open("age.txt", ios::out);
 
 	if (write1.is_open() && write2.is_open()) {
 		cout << "Enter your name." << endl;
