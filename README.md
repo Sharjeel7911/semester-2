@@ -14,5 +14,5 @@
 ## English II
 - **Lecture:** Maryam Javaid
 
-## Ideology & Constitution of Pakistan
+## Civics and Community Engagement
 - **Lecture:** Bushra Bano / Muznah Saleha
