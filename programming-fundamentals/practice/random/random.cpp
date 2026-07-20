@@ -1,5 +1,5 @@
+#include <fstream>
 #include <iostream>
-#include<fstream>
 using namespace std;
 
 void readx(ifstream& read, int array[], int& size) {
@@ -7,10 +7,8 @@ void readx(ifstream& read, int array[], int& size) {
 	while (read >> *(array + size)) {
 		size++;
 	}
-
 }
-int main1()
-{
+int main1() {
 	int array[100] = {};
 	int size = 0;
 	ifstream read("x.txt");
@@ -18,7 +16,7 @@ int main1()
 		cout << "Error: Unable to open file." << endl;
 		return 1;
 	}
-	
+
 	readx(read, array, size);
 	read.close();
 
@@ -35,8 +33,8 @@ int main2() {
 
 	int* array = new int[x];
 
-	for (int i = 0; i < x ; i++) {
-		cin >> array[i]; //*(array+i)
+	for (int i = 0; i < x; i++) {
+		cin >> array[i];  //*(array+i)
 	}
 
 	for (int i = 0; i < x / 2; i++) {
@@ -54,10 +52,10 @@ int main2() {
 	return 0;
 }
 
-//PRACTICE 
-//Task 1
+// PRACTICE
+// Task 1
 void filesize(int& size);
-void readfile(ifstream& read,int array[]);
+void readfile(ifstream& read, int array[]);
 void writeresult(int result[], int array[], int size);
 bool checkpair(int value, int array[], int size);
 
@@ -65,7 +63,7 @@ int main3() {
 	int size = 0;
 	filesize(size);
 	int* array = new int[size];
-	ifstream read("Data.txt");
+	ifstream read("data.txt");
 	if (!read) {
 		cout << "Error: Unable to open file." << endl;
 		return 1;
@@ -74,15 +72,13 @@ int main3() {
 	int* result = new int[size];
 	writeresult(result, array, size);
 
-
 	delete[] array;
 	delete[] result;
 
 	return 0;
-
 }
 void filesize(int& size) {
-	ifstream read("Data.txt");
+	ifstream read("data.txt");
 	if (!read) {
 		cout << "Error: Unable to open file." << endl;
 		return;
@@ -127,13 +123,12 @@ bool checkpair(int value, int array[], int size) {
 			count++;
 		}
 	}
-	return count == 2; 
+	return count == 2;
 }
-
 
 // *** FINAL PRACTICE ***
 
-//1
+// 1
 void take_input(int students, int quiz, int** array);
 void average_score(int students, int quiz, int** array, float** average);
 void highest_lowest(int students, float** average);
@@ -146,11 +141,11 @@ int main4() {
 	cout << "How many quizzes? ";
 	cin >> quiz;
 
-	int** array = new int* [students];
+	int** array = new int*[students];
 
-	take_input(students,quiz,array);
+	take_input(students, quiz, array);
 
-	float** average = new float* [students];
+	float** average = new float*[students];
 	for (int i = 0; i < students; i++) average[i] = new float[2];
 	average_score(students, quiz, array, average);
 
@@ -193,7 +188,7 @@ void average_score(int students, int quiz, int** array, float** average) {
 void highest_lowest(int students, float** average) {
 	float highest = average[0][1];
 	float lowest = average[0][1];
-	int highest_index = average[0][0]; 
+	int highest_index = average[0][0];
 	int lowest_index = average[0][0];
 
 	for (int i = 1; i < students; i++) {
@@ -214,26 +209,26 @@ void highest_lowest(int students, float** average) {
 	cout << "Lowest Average: " << lowest << " by Student " << lowest_index + 1 << endl;
 }
 
-//2
+// 2
 
-void size_of_file(int &size);
+void size_of_file(int& size);
 void read_data_from_file(ifstream& read, char** students, int* roll, float* gpa, int size);
 void descending(char** students, int* roll, float* gpa, int size);
 void find_student(char** students, int* roll, float* gpa, int size);
 int main5() {
 	int size = 0;
 	size_of_file(size);
-	char** students = new char* [size];
+	char** students = new char*[size];
 	for (int i = 0; i < size; i++) students[i] = new char[50];
 	int* roll = new int[size];
 	float* gpa = new float[size];
 
-	ifstream read("Students.csv");
+	ifstream read("students.csv");
 	if (!read) {
 		cout << "Error: Unable to open file." << endl;
 		return 1;
 	}
-	read_data_from_file(read,students,roll,gpa,size);
+	read_data_from_file(read, students, roll, gpa, size);
 
 	descending(students, roll, gpa, size);
 
@@ -246,7 +241,7 @@ int main5() {
 	return 0;
 }
 void size_of_file(int& size) {
-	ifstream read("Students.csv");
+	ifstream read("students.csv");
 	if (!read) {
 		cout << "Error: Unable to open file." << endl;
 		return;
@@ -267,9 +262,9 @@ void read_data_from_file(ifstream& read, char** students, int* roll, float* gpa,
 		students[i][j] = '\0';
 
 		read >> roll[i];
-		read.ignore(); 
+		read.ignore();
 		read >> gpa[i];
-		read.ignore();  
+		read.ignore();
 	}
 }
 void descending(char** students, int* roll, float* gpa, int size) {
@@ -287,7 +282,6 @@ void descending(char** students, int* roll, float* gpa, int size) {
 				char* temp_name = students[j];
 				students[j] = students[j + 1];
 				students[j + 1] = temp_name;
-
 			}
 		}
 	}
@@ -311,18 +305,17 @@ void find_student(char** students, int* roll, float* gpa, int size) {
 	if (!isfound) {
 		cout << "Student not found." << endl;
 	}
-
 }
 
-//3
-//Sparse matrix
+// 3
+// Sparse matrix
 
 int main6() {
 	int n;
 	cout << "Enter matrix size: ";
 	cin >> n;
 
-	int** matrix = new int* [n];
+	int** matrix = new int*[n];
 	int count = 0;
 
 	cout << "Enter matrix elements (" << n << "x" << n << "):\n";
@@ -334,7 +327,7 @@ int main6() {
 		}
 	}
 
-	int** compressed = new int* [count];
+	int** compressed = new int*[count];
 	int k = 0;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
@@ -353,7 +346,7 @@ int main6() {
 		cout << "(" << compressed[i][0] << "," << compressed[i][1] << ")" << "," << compressed[i][2] << endl;
 	}
 
-	int** original = new int* [n];
+	int** original = new int*[n];
 	for (int i = 0; i < n; i++) {
 		original[i] = new int[n];
 		for (int j = 0; j < n; j++) {
@@ -391,23 +384,25 @@ int main6() {
 	return 0;
 }
 
-//4
+// 4
 
 void read_matrix(int** matrix, int size);
 int main7() {
 	const int size = 5;
-	int** matrix = new int* [size];
+	int** matrix = new int*[size];
 
 	for (int i = 0; i < size; i++) matrix[i] = new int[size - i];
 
 	read_matrix(matrix, size);
 
-	//Display
+	// Display
 	for (int i = 0; i < size; i++) {
 		int k = 0;
 		for (int j = 0; j < size; j++) {
-			if (j < i) cout << "0 ";
-			else cout << matrix[i][k++] << " ";
+			if (j < i)
+				cout << "0 ";
+			else
+				cout << matrix[i][k++] << " ";
 		}
 		cout << endl;
 	}
@@ -417,7 +412,7 @@ int main7() {
 	return 0;
 }
 void read_matrix(int** matrix, int size) {
-	ifstream read("Matrix.txt");
+	ifstream read("matrix.txt");
 	if (!read) {
 		cout << "Error";
 		return;
@@ -430,8 +425,8 @@ void read_matrix(int** matrix, int size) {
 	read.close();
 }
 
-//5
-//Regrow & Shrink
+// 5
+// Regrow & Shrink
 
 void read_regrow(int*& array, int& size);
 int* regrow(int* array, int size, int capacity);
@@ -449,7 +444,7 @@ int main8() {
 	return 0;
 }
 void read_regrow(int*& array, int& size) {
-	ifstream read("Data.txt");
+	ifstream read("data.txt");
 	if (!read) {
 		cout << "Error";
 		return;
@@ -484,4 +479,3 @@ int* shrink(int* array, int size) {
 	delete[] array;
 	return new_array;
 }
-

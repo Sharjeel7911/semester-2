@@ -1,21 +1,19 @@
-#include<iostream>
-using namespace std;	
+#include <iostream>
+using namespace std;
 
 int DaysInMonth(int month, int years);
 int DaysInYear(int year);
 int DaysBetweenYears(int startYear, int endYear);
 int DaysBetweenMonths(int startMonth, int endMonth, int year);
 int DayOfWeek(int day, int month, int year);
-bool validdate(int d, int m, int y);	
+bool validdate(int d, int m, int y);
 bool isLeapYear(int years);
 
-void menu();    
-void x();   // For 14 August 1947
-void y();   // For user-entered date
+void menu();
+void x();  // For 14 August 1947
+void y();  // For user-entered date
 
-void task2() {
-	menu(); 
-}
+void task2() { menu(); }
 
 void menu() {
 	int choice;
@@ -28,11 +26,9 @@ void menu() {
 
 	if (choice == 1) {
 		x();
-	}
-	else if (choice == 2) {
+	} else if (choice == 2) {
 		y();
-	}
-	else {
+	} else {
 		cout << "Invalid choice.\n";
 	}
 }
@@ -43,13 +39,27 @@ void x() {
 
 	cout << "14 August 1947 was: ";
 	switch (DayofWeeekIndex) {
-	case 1: cout << "Sunday"; break;
-	case 2: cout << "Monday"; break;
-	case 3: cout << "Tuesday"; break;
-	case 4: cout << "Wednesday"; break;
-	case 5: cout << "Thursday"; break;
-	case 6: cout << "Friday"; break;
-	case 7: cout << "Saturday"; break;
+		case 1:
+			cout << "Sunday";
+			break;
+		case 2:
+			cout << "Monday";
+			break;
+		case 3:
+			cout << "Tuesday";
+			break;
+		case 4:
+			cout << "Wednesday";
+			break;
+		case 5:
+			cout << "Thursday";
+			break;
+		case 6:
+			cout << "Friday";
+			break;
+		case 7:
+			cout << "Saturday";
+			break;
 	}
 	cout << endl;
 }
@@ -66,13 +76,27 @@ void y() {
 
 	cout << "The day on " << d << "/" << m << "/" << y << " was: ";
 	switch (DayofWeeekIndex) {
-	case 1: cout << "Sunday"; break;
-	case 2: cout << "Monday"; break;
-	case 3: cout << "Tuesday"; break;
-	case 4: cout << "Wednesday"; break;
-	case 5: cout << "Thursday"; break;
-	case 6: cout << "Friday"; break;
-	case 7: cout << "Saturday"; break;
+		case 1:
+			cout << "Sunday";
+			break;
+		case 2:
+			cout << "Monday";
+			break;
+		case 3:
+			cout << "Tuesday";
+			break;
+		case 4:
+			cout << "Wednesday";
+			break;
+		case 5:
+			cout << "Thursday";
+			break;
+		case 6:
+			cout << "Friday";
+			break;
+		case 7:
+			cout << "Saturday";
+			break;
 	}
 	cout << endl;
 }
@@ -80,8 +104,7 @@ void y() {
 bool validdate(int d, int m, int y) {
 	if (d < 1 || d > DaysInMonth(m, y) || m < 1 || m > 12) {
 		return false;
-	}
-	else
+	} else
 		return true;
 }
 int DayOfWeek(int day, int month, int year) {
@@ -108,8 +131,7 @@ int DaysBetweenYears(int startYear, int endYear) {
 int DaysInYear(int year) {
 	if (isLeapYear(year)) {
 		return 366;
-	}
-	else {
+	} else {
 		return 365;
 	}
 }
@@ -124,17 +146,14 @@ int DaysInMonth(int month, int years) {
 		years = isLeapYear(years);
 		if (years != 0) {
 			return 29;
-		}
-		else {
+		} else {
 			return 28;
 		}
 	}
 }
 bool isLeapYear(int years) {
-
 	if (years % 4 == 0 && years % 100 != 0 || years % 400 == 0) {
 		return true;
-	}
-	else
+	} else
 		return false;
 }

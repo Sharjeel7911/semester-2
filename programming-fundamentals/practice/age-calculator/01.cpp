@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int DaysInAMonth(int month, int year);
@@ -6,9 +6,9 @@ bool IsLeapYear(int year);
 bool IsValidYearInDate(int year);
 bool IsValidMonthInDate(int month);
 bool IsValidDaysInDate(int day, int month, int year);
-bool IsValidDate(int dob,int mob,int yob);
-bool IsValidDateOfDeath(int dob,int mob,int yob,int dod,int mod,int yod);
-void CalculateAgeAndDisplay(int dob,int mob,int yob,int dod,int mod,int yod);
+bool IsValidDate(int dob, int mob, int yob);
+bool IsValidDateOfDeath(int dob, int mob, int yob, int dod, int mod, int yod);
+void CalculateAgeAndDisplay(int dob, int mob, int yob, int dod, int mod, int yod);
 
 void task1() {
 	int dob, mob, yob, dod, mod, yod;
@@ -27,61 +27,51 @@ void task1() {
 	CalculateAgeAndDisplay(dob, mob, yob, dod, mod, yod);
 }
 
-int DaysInAMonth(int month,int year) {
+int DaysInAMonth(int month, int year) {
 	if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
 		return 31;
-	}
-	else if (month == 4 || month == 6 || month == 9 || month == 11) {
+	} else if (month == 4 || month == 6 || month == 9 || month == 11) {
 		return 30;
-	}
-	else if (month == 2) {
+	} else if (month == 2) {
 		if (IsLeapYear(year)) {
 			return 29;
-		}
-		else {
+		} else {
 			return 28;
 		}
-	}
-	else {
+	} else {
 		return -1;
 	}
 }
 bool IsLeapYear(int year) {
 	if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
 		return true;
-	}
-	else {
+	} else {
 		return false;
 	}
 }
 bool IsValidYearInDate(int year) {
 	if (year < 1) {
 		return false;
-	}
-	else {
+	} else {
 		return true;
 	}
 }
 bool IsValidMonthInDate(int month) {
 	if (month > 0 && month <= 12) {
 		return true;
-	}
-	else {
+	} else {
 		return false;
 	}
 }
 bool IsValidDaysInDate(int day, int month, int year) {
 	if (day > 0 && day <= DaysInAMonth(month, year)) {
 		return true;
-	}
-	else {
+	} else {
 		return false;
 	}
 }
-bool IsValidDate(int dob, int mob, int yob){
-	return IsValidYearInDate(yob) && IsValidMonthInDate(mob) && IsValidDaysInDate(dob, mob, yob);
-}
-bool IsValidDateOfDeath(int dob, int mob, int yob, int dod, int mod, int yod){
+bool IsValidDate(int dob, int mob, int yob) { return IsValidYearInDate(yob) && IsValidMonthInDate(mob) && IsValidDaysInDate(dob, mob, yob); }
+bool IsValidDateOfDeath(int dob, int mob, int yob, int dod, int mod, int yod) {
 	if (!IsValidDate(dob, mob, yob) || !IsValidDate(dod, mod, yod)) {
 		return false;
 	}
@@ -104,11 +94,11 @@ void CalculateAgeAndDisplay(int dob, int mob, int yob, int dod, int mod, int yod
 		int Years = yod - yob;
 		int Months = mod - mob;
 		int Days = dod - dob;
-	
+
 		if (Days < 0) {
 			mod -= 1;
 			if (mod == 0) {
-				mod = 12;	
+				mod = 12;
 				yod -= 1;
 			}
 			Days += DaysInAMonth(mod, yod);
@@ -123,8 +113,7 @@ void CalculateAgeAndDisplay(int dob, int mob, int yob, int dod, int mod, int yod
 		cout << "Age at death:\n";
 		cout << Years << " years, " << Months << " months, " << Days << " days" << endl;
 		cout << "----------------------------" << endl;
-	}
-	else {
+	} else {
 		cout << "Invalid date of birth or date of death." << endl;
 	}
 }

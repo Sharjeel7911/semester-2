@@ -1,10 +1,10 @@
 #include <iostream>
-#include <fstream>
 using namespace std;
 
 void input(int* array, int size, int& count);
 int* regrow(int* array, int& size);
 int* shrink(int* array, int& size, int capacity);
+
 int main() {
 	int size = 2;
 	int count = 0;
@@ -19,8 +19,7 @@ int main() {
 				array = regrow(array, size);
 				cout << "New capacity " << size << endl;
 			}
-		}
-		else if (x == 2) {
+		} else if (x == 2) {
 			int num = 0;
 			cout << "Enter priority to resolve" << endl;
 			cin >> num;
@@ -28,19 +27,17 @@ int main() {
 			size = size - 1;
 			array--;
 			cout << "Priority resolved. New capacity: " << size << endl;
-		}
-		else if (x == 2) {
+		} else if (x == 2) {
 			cout << "Queue";
 			for (int i = 0; i < count; i++) {
 				cout << array[i] << ", ";
 			}
-		}
-		else cout << "Invalid choice";
+		} else
+			cout << "Invalid choice";
 	}
-	delete[]array;
+	delete[] array;
 	return 0;
 }
-
 
 void input(int* array, int size, int& count) {
 	for (int i = 0; i < size; i++) {
@@ -48,8 +45,8 @@ void input(int* array, int size, int& count) {
 		cin >> array[i];
 		count++;
 	}
-
 }
+
 int* regrow(int* array, int& size) {
 	int* newarr = new int[size + 2];
 	for (int i = 0; i < size; i++) {
@@ -58,6 +55,7 @@ int* regrow(int* array, int& size) {
 	size = size + 2;
 	return newarr;
 }
+
 int* shrink(int* array, int& size, int num) {
 	int index = 0;
 	int* newarr = new int[size - 1];
@@ -70,8 +68,7 @@ int* shrink(int* array, int& size, int num) {
 	for (int i = 0; i < size; i++) {
 		if (i >= index) {
 			newarr[i] = array[i + 1];
-		}
-		else {
+		} else {
 			newarr[i] = array[i];
 		}
 	}

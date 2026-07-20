@@ -1,13 +1,12 @@
-#include <iostream>
 #include <fstream>
+#include <iomanip>
+#include <iostream>
 #include <string>
-#include <iomanip>  
 using namespace std;
 
 // First practice. Just opening and closing file and understanding
 
-int main1()
-{
+int main1() {
 	ofstream write;
 
 	write.open("X.txt");
@@ -35,7 +34,7 @@ int main1()
 	return 0;
 }
 
-//Playing with ASCII
+// Playing with ASCII
 
 int main2() {
 	ofstream write;
@@ -55,25 +54,20 @@ int main2() {
 			cout << line << endl;
 		}
 		cout << endl;
-		read.clear(); // IMPORTANT
+		read.clear();   // IMPORTANT
 		read.seekg(0);  // IMPORTANT    // IMPORTANT    // IMPORTANT    // IMPORTANT   // IMPORTANT
 
 		char ch;
 		while (read.get(ch)) {
-
 			if (ch >= 'A' && ch <= 'Z') {
 				cout << char(ch + 32);
-			}
-			else if (ch >= 'a' && ch <= 'z') {
+			} else if (ch >= 'a' && ch <= 'z') {
 				cout << char(ch - 32);
-			}
-			else if (ch == ' ') {
+			} else if (ch == ' ') {
 				cout << " ";
-			}
-			else if (ch == '\n') {
+			} else if (ch == '\n') {
 				cout << endl;
-			}
-			else {
+			} else {
 				cout << char(ch + 10) << " ";
 			}
 		}
@@ -82,7 +76,7 @@ int main2() {
 	return 0;
 }
 
-//Write a C++ program to count the number of lines in a text file
+// Write a C++ program to count the number of lines in a text file
 
 int main3() {
 	ofstream write;
@@ -110,11 +104,10 @@ int main3() {
 		read.close();
 	}
 
-
 	return 0;
 }
 
-//Write a C++ program to count the number of words in a text file
+// Write a C++ program to count the number of words in a text file
 
 int main4() {
 	ofstream write;
@@ -140,7 +133,7 @@ int main4() {
 	return 0;
 }
 
-//Write a C++ program to copy the contents of one text file to another
+// Write a C++ program to copy the contents of one text file to another
 
 int main5() {
 	ofstream write;
@@ -168,7 +161,7 @@ int main5() {
 	return 0;
 }
 
-//Write a C++ program to find and replace a specific word in a text file
+// Write a C++ program to find and replace a specific word in a text file
 
 int main6() {
 	ofstream write;
@@ -191,14 +184,13 @@ int main6() {
 	string sentence = "", word;
 	if (read.is_open()) {
 		while (read >> word) {
-			string cleanWord = word; // IMPORTANT   // IMPORTANT   // IMPORTANT   // IMPORTANT  // IMPORTANT
+			string cleanWord = word;  // IMPORTANT   // IMPORTANT   // IMPORTANT   // IMPORTANT  // IMPORTANT
 			if (ispunct(cleanWord.back())) {
 				cleanWord.pop_back();
 			}
 			if (cleanWord == wordtofind) {
 				sentence += wordtoreplaceX + " ";
-			}
-			else {
+			} else {
 				sentence += word + " ";
 			}
 		}
@@ -216,9 +208,9 @@ int main6() {
 	return 0;
 }
 
-//Write a C++ program to append new data to an existing text file
+// Write a C++ program to append new data to an existing text file
 
-//Write a program which will write the data into a file “sampleoutput.txt” and print it on the screen. The file contains student’s name, student Fee and department name.
+// Write a program which will write the data into a file “sampleoutput.txt” and print it on the screen. The file contains student’s name, student Fee and department name.
 
 int main71() {
 	fstream write;
@@ -227,7 +219,7 @@ int main71() {
 	cout << "Enter the number of students: ";
 	cin >> numStudents;
 	write << left << setw(25) << "Student Name" << setw(20) << "Student id" << setw(20) << "Department" << endl;
-	//IMPORTANT  USE SETW FOR GIVING EQUAL SPACE
+	// IMPORTANT  USE SETW FOR GIVING EQUAL SPACE
 	if (write.is_open()) {
 		cin.ignore();
 		for (int i = 0; i < numStudents; i++) {
@@ -252,7 +244,7 @@ int main71() {
 	return 0;
 }
 
-//Write a program which reads the file sampleIn.txt as given below and display it on the screen.                                            
+// Write a program which reads the file sampleIn.txt as given below and display it on the screen.
 int main72() {
 	fstream read;
 	read.open("sampleoutput.txt", ios::in);
@@ -277,7 +269,7 @@ int main72() {
 	return 0;
 }
 
-//Write a program which will read from a file “sampleIn.txt” and print it on the screen. The file contains student’s name, student Fee and department name.
+// Write a program which will read from a file “sampleIn.txt” and print it on the screen. The file contains student’s name, student Fee and department name.
 
 int main8() {
 	fstream read;
@@ -306,7 +298,7 @@ int main8() {
 	return 0;
 }
 
-//Write a C++ program in which, asks a c-string name, age and c-string contact number from user. Now insert this information into a file “record.txt” at start.
+// Write a C++ program in which, asks a c-string name, age and c-string contact number from user. Now insert this information into a file “record.txt” at start.
 
 int main9() {
 	fstream write;
@@ -335,14 +327,14 @@ int main9() {
 	return 0;
 }
 
-//Write a program which reads an input file of student’s “samplein2.txt”, add the fee of each student by 4000 and write the result in new file “sampleout2.txt.”
+// Write a program which reads an input file of student’s “samplein2.txt”, add the fee of each student by 4000 and write the result in new file “sampleout2.txt.”
 
 int main10() {
 	fstream read;
 	fstream write;
 	read.open("samplein2.txt", ios::in);
 	write.open("sampleout2.txt", ios::out);
-	if (!read.is_open()||!write.is_open()) {
+	if (!read.is_open() || !write.is_open()) {
 		cout << "Error" << endl;
 		return 1;
 	}
@@ -363,7 +355,7 @@ int main10() {
 	return 0;
 }
 
-//Write a program which reads the file sampleIn.txt as given below. use getline() function and display it on the screen and count the number of records present into the sampleln.txt.
+// Write a program which reads the file sampleIn.txt as given below. use getline() function and display it on the screen and count the number of records present into the sampleln.txt.
 
 int main11() {
 	fstream read;
@@ -384,7 +376,6 @@ int main11() {
 		read >> salary;
 		read.ignore();
 
-
 		read.getline(dept, 20);
 		cout << left << setw(25) << name << setw(10) << salary << setw(20) << dept << endl;
 		count++;
@@ -395,7 +386,7 @@ int main11() {
 	return 0;
 }
 
-//Write a C++ program in which, read a c-string sentence from file sentence.txt at once. Your task is to separate each word into another c-string one by one and store them into a file word.txt.
+// Write a C++ program in which, read a c-string sentence from file sentence.txt at once. Your task is to separate each word into another c-string one by one and store them into a file word.txt.
 
 int main12() {
 	fstream read;
@@ -416,7 +407,7 @@ int main12() {
 	return 0;
 }
 
-//Write a C++ program to search the data from the file named "gpa.txt". Print the name who has greater than 3.2 CGPA. 
+// Write a C++ program to search the data from the file named "gpa.txt". Print the name who has greater than 3.2 CGPA.
 
 int main13() {
 	fstream read;
@@ -440,24 +431,23 @@ int main13() {
 	return 0;
 }
 
-//Write a C++ program that reads character by character form data.txt , and replace the character ‘y’ with character ‘a’ in a new file (replace.txt). Note: we don’t know how much data a file has. 
+// Write a C++ program that reads character by character form data.txt , and replace the character ‘y’ with character ‘a’ in a new file (replace.txt). Note: we don’t know how much data a file has.
 
 int main14() {
 	fstream write;
 	fstream read;
-	 read.open("data.txt", ios::in);
-	 write.open("replace.txt", ios::out);
+	read.open("data.txt", ios::in);
+	write.open("replace.txt", ios::out);
 
 	if (!read.is_open() || !write.is_open()) {
 		cout << "Error opening file!" << endl;
 		return 1;
 	}
 	char ch;
-	while (read.get(ch)) { 
-		if (ch == 'y' ) {
+	while (read.get(ch)) {
+		if (ch == 'y') {
 			ch = 'a';
-		}
-		else if (ch == 'Y') {
+		} else if (ch == 'Y') {
 			ch = 'A';
 		}
 		write << ch;
