@@ -1,14 +1,13 @@
-#include <iostream>
 #include <fstream>
-#include <iomanip>  
+#include <iomanip>
+#include <iostream>
 using namespace std;
 
-//Task 1
+// Task 1
 
 int main1() {
-
-	fstream read("Sample.txt", ios::in);
-	fstream write("Result.txt", ios::out);
+	fstream read("sample.txt", ios::in);
+	fstream write("result.txt", ios::out);
 	if (!read.is_open() || !write.is_open()) {
 		cout << "Error while opening the file." << endl;
 		return 1;
@@ -38,46 +37,38 @@ int main1() {
 
 		if (percetage >= 85 && percetage <= 100) {
 			write << name << ", " << id << ", " << percetage << "%, " << "A";
-		}
-		else if (percetage >= 80 && percetage <= 84) {
+		} else if (percetage >= 80 && percetage <= 84) {
 			write << name << ", " << id << ", " << percetage << "%, " << "A-";
-		}
-		else if (percetage >= 75 && percetage <= 79) {
+		} else if (percetage >= 75 && percetage <= 79) {
 			write << name << ", " << id << ", " << percetage << "%, " << "B+";
-		}
-		else if (percetage >= 70 && percetage <= 74) {
+		} else if (percetage >= 70 && percetage <= 74) {
 			write << name << ", " << id << ", " << percetage << "%, " << "B";
-		}
-		else if (percetage >= 65 && percetage <= 69) {
+		} else if (percetage >= 65 && percetage <= 69) {
 			write << name << ", " << id << ", " << percetage << "%, " << "B-";
-		}
-		else if (percetage >= 60 && percetage <= 64) {
+		} else if (percetage >= 60 && percetage <= 64) {
 			write << name << ", " << id << ", " << percetage << "%, " << "C+";
-		}
-		else if (percetage >= 55 && percetage <= 59) {
+		} else if (percetage >= 55 && percetage <= 59) {
 			write << name << ", " << id << ", " << percetage << "%, " << "C";
-		}
-		else if (percetage >= 50 && percetage <= 54) {
+		} else if (percetage >= 50 && percetage <= 54) {
 			write << name << ", " << id << ", " << percetage << "%, " << "C-";
-		}
-		else if (percetage < 50) {
+		} else if (percetage < 50) {
 			write << name << ", " << id << ", " << percetage << "%, " << "F";
 		}
 	}
 	read.close();
 	write.close();
-	cout << "Grades have been successfully saved in 'Result.txt'" << endl;
+	cout << "Grades have been successfully saved in 'result.txt'" << endl;
 
 	return 0;
 }
 
-//Task 2 
+// Task 2
 
 int main2() {
 	fstream read;
 	fstream write;
-	read.open("word_frequency.txt", ios::in);
-	write.open("word_length.txt", ios::out);
+	read.open("word-frequency.txt", ios::in);
+	write.open("word-length.txt", ios::out);
 	if (!read.is_open() || !write.is_open()) {
 		cout << "Error while opening the file." << endl;
 		return 1;
@@ -109,8 +100,7 @@ int main2() {
 				i++;
 			}
 			maxword[i] = '\0';
-		}
-		else if (count == max) {
+		} else if (count == max) {
 			int i = 0, j = 0;
 			while (maxword[j] != '\0') {
 				j++;
@@ -133,10 +123,9 @@ int main2() {
 	return 0;
 }
 
-//Task 3
-//Deleted file and Not found
+// Task 3
+// Deleted file and Not found
 int main() {
-
 	while (true) {
 		char choice;
 
@@ -151,17 +140,15 @@ int main() {
 			cin >> choice;
 			cin.ignore();
 
-			if (choice == 'S' || choice == 's' || choice == 'P' || choice == 'p' || choice == 'E' || choice == 'e' || choice == 'D' || choice == 'd' || choice == 'R' || choice == 'r' || choice == 'X' || choice == 'x')
-			{
+			if (choice == 'S' || choice == 's' || choice == 'P' || choice == 'p' || choice == 'E' || choice == 'e' || choice == 'D' || choice == 'd' || choice == 'R' || choice == 'r' || choice == 'X' || choice == 'x') {
 				break;
-			}
-			else {
+			} else {
 				cout << "Invalid department number. Please choose again." << endl;
 			}
 		}
 
 		if (choice == 'S' || choice == 's') {
-			fstream read("Employee.txt", ios::in);
+			fstream read("employee.txt", ios::in);
 			int counter = 0;
 
 			if (read.is_open()) {
@@ -172,8 +159,7 @@ int main() {
 				read.close();
 			}
 
-
-			fstream write("Employee.txt", ios::app);
+			fstream write("employee.txt", ios::app);
 			if (!write.is_open()) {
 				cout << "Error while opening the file." << endl;
 				return 1;
@@ -183,16 +169,19 @@ int main() {
 			float salary;
 			char dept[50];
 
-
 			for (int i = 1; i <= 5; i++) {
 				cout << endl;
 				int id = counter + i;
 				cout << "Enter " << i;
 
-				if (i == 1) cout << "st";
-				else if (i == 2) cout << "nd";
-				else if (i == 3) cout << "rd";
-				else cout << "th";
+				if (i == 1)
+					cout << "st";
+				else if (i == 2)
+					cout << "nd";
+				else if (i == 3)
+					cout << "rd";
+				else
+					cout << "th";
 
 				cout << " employee's name" << endl;
 				cin.ignore();
@@ -221,7 +210,7 @@ int main() {
 		}
 
 		else if (choice == 'P' || choice == 'p') {
-			fstream read("Employee.txt", ios::in);
+			fstream read("employee.txt", ios::in);
 			if (!read.is_open()) {
 				cout << "Error while opening the file." << endl;
 				return 1;
@@ -247,7 +236,7 @@ int main() {
 		}
 
 		else if (choice == 'E' || choice == 'e') {
-			fstream read("Employee.txt", ios::in);
+			fstream read("employee.txt", ios::in);
 			if (!read.is_open()) {
 				cout << "Error while opening the file." << endl;
 				return 1;
@@ -291,7 +280,6 @@ int main() {
 					nname[j] = '\0';
 				}
 
-
 				read.getline(dept, 50);
 			}
 			cout << "The employee with the highest salary in the database is/are: " << nname << endl;
@@ -312,7 +300,7 @@ int main() {
 				k++;
 			}
 
-			fstream read("Employee.txt", ios::in);
+			fstream read("employee.txt", ios::in);
 			if (!read.is_open()) {
 				cout << "Error while opening the file." << endl;
 				return 1;
@@ -346,7 +334,6 @@ int main() {
 					x--;
 				}
 
-
 				int j = 0;
 				bool isMatched = true;
 				while (dept[j] != '\0' && ddept[j] != '\0') {
@@ -360,7 +347,6 @@ int main() {
 				if (dept[j] != '\0' || ddept[j] != '\0') {
 					isMatched = false;
 				}
-
 
 				if (isMatched) {
 					if (!found) {
@@ -379,13 +365,12 @@ int main() {
 		}
 
 		else if (choice == 'R' || choice == 'r') {
-
 			cout << "Enter the ID of employee who is set to leave the department." << endl;
 			int id;
 			cin >> id;
 			cin.ignore();
 
-			fstream readx("EmployeeX.txt", ios::in);
+			fstream readx("employeex.txt", ios::in);
 			bool employeeXexists = readx.is_open();
 			readx.close();
 
@@ -396,8 +381,8 @@ int main() {
 			int x;
 
 			if (!employeeXexists) {
-				fstream read("Employee.txt", ios::in);
-				fstream write("EmployeeX.txt", ios::out);
+				fstream read("employee.txt", ios::in);
+				fstream write("employeex.txt", ios::out);
 				if (!read.is_open()) {
 					cout << "Error while opening file." << endl;
 					return 1;
@@ -426,8 +411,8 @@ int main() {
 			}
 
 			else {
-				fstream read("EmployeeX.txt", ios::in);
-				fstream write("XEmployeeX.txt", ios::out);
+				fstream read("employeex.txt", ios::in);
+				fstream write("xemployeex.txt", ios::out);
 				if (!read.is_open() || !write.is_open()) {
 					cout << "Error while opening file." << endl;
 					return 1;
@@ -448,13 +433,12 @@ int main() {
 						write << x << ". " << name << ", " << salary << ", " << dept << endl;
 						continue;
 					}
-
 				}
 				read.close();
 				write.close();
 
-				fstream ready("XEmployeeX.txt", ios::in);
-				fstream writey("EmployeeX.txt", ios::out);
+				fstream ready("xemployeex.txt", ios::in);
+				fstream writey("employeex.txt", ios::out);
 				if (!ready.is_open() || !writey.is_open()) {
 					cout << "Error while opening file." << endl;
 					return 1;
@@ -475,7 +459,6 @@ int main() {
 			cout << "See you Soon ^_~" << endl;
 			break;
 		}
-
 	}
 	return 0;
 }

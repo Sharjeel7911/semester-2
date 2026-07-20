@@ -1,6 +1,6 @@
+#include <fstream>
+#include <iomanip>
 #include <iostream>
-#include <iomanip>		
-#include<fstream>
 using namespace std;
 
 void sizeofarrayfromfile(char* filename, int& numCandidates);
@@ -15,7 +15,7 @@ void writeToFile(int* candidateIds, int* votesReceived, double* votePercentages,
 void task1() {
 	system("cls");
 	int numCandidates = 0;
-	char filename[] = "Data.csv";
+	char filename[] = "data.csv";
 	sizeofarrayfromfile(filename, numCandidates);
 
 	int* candidateIds = dynamic(numCandidates);
@@ -50,25 +50,23 @@ void task1() {
 void sizeofarrayfromfile(char* filename, int& numCandidates) {
 	fstream read(filename, ios::in);
 	if (!read) {
-		cout << "Error: Unable to open 'Data.csv'." << endl;
+		cout << "Error: Unable to open 'data.csv'." << endl;
 		return;
 	}
 	char header[100];
 	read.getline(header, 100);
 	numCandidates = 0;
 	char count[100];
-	while (read.getline(count,100)) {
+	while (read.getline(count, 100)) {
 		numCandidates++;
 	}
 	read.close();
 }
-int* dynamic(int numCandidates) {
-	return new int[numCandidates];
-}
+int* dynamic(int numCandidates) { return new int[numCandidates]; }
 void readCandidateData(char* filename, int* candidateIds, int* votesReceived, int numCandidates) {
 	fstream read(filename, ios::in);
 	if (!read) {
-		cout << "Error: Unable to open 'Data.csv'." << endl;
+		cout << "Error: Unable to open 'data.csv'." << endl;
 		return;
 	}
 	char header[100];
@@ -109,9 +107,9 @@ void displayCandidateInfo(int* candidateIds, int* votesReceived, double* votePer
 	}
 }
 void writeToFile(int* candidateIds, int* votesReceived, double* votePercentages, int numCandidates) {
-	fstream write("Results.csv", ios::out);
+	fstream write("results.csv", ios::out);
 	if (!write) {
-		cout << "Error: Unable to open 'Results.csv'." << endl;
+		cout << "Error: Unable to open 'results.csv'." << endl;
 		return;
 	}
 	write << "Candidate, Votes Received, % of Total Votes" << endl;

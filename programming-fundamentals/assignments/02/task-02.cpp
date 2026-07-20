@@ -1,6 +1,6 @@
-#include <iostream>
 #include <fstream>
-#include<iomanip>
+#include <iomanip>
+#include <iostream>
 using namespace std;
 
 void menux();
@@ -11,8 +11,8 @@ void descending();
 void search();
 
 void task2() {
-	if (writex()) { 
-		menux();    
+	if (writex()) {
+		menux();
 	}
 }
 
@@ -34,37 +34,32 @@ void menux() {
 			system("cls");
 			display();
 			system("pause");
-		}
-		else if (choice == 'l' || choice == 'L') {
+		} else if (choice == 'l' || choice == 'L') {
 			system("cls");
 			lowest();
 			system("pause");
-		}
-		else if (choice == 'm' || choice == 'M') {
+		} else if (choice == 'm' || choice == 'M') {
 			system("cls");
 			descending();
 			system("pause");
-		}
-		else if (choice == 'r' || choice == 'R') {
+		} else if (choice == 'r' || choice == 'R') {
 			system("cls");
 			search();
 			system("pause");
-		}
-		else if (choice == '5') {
+		} else if (choice == '5') {
 			cout << "Thank you for using the program!" << endl;
 			system("pause");
-		}
-		else {
+		} else {
 			system("cls");
 			cout << "Invalid choice. Please try again." << endl;
-			system("pause");	
+			system("pause");
 		}
 	} while (choice != '5');
 }
 
 bool writex() {
-	fstream read("Test.txt", ios::in);
-	fstream write("Result.txt", ios::out);
+	fstream read("test.txt", ios::in);
+	fstream write("result.txt", ios::out);
 	if (read) {
 		char roll[100];
 		char ch;
@@ -74,15 +69,13 @@ bool writex() {
 
 		while (read.getline(roll, 100, ',')) {
 			write << roll << ",";
-			marks = 0; 
+			marks = 0;
 			while (read.get(ch) && ch != '\n') {
 				if (ch == ' ') {
 					marks += 0;
-				}
-				else if (ch == 'F') {
+				} else if (ch == 'F') {
 					marks -= 1;
-				}
-				else if (ch == 'T') {
+				} else if (ch == 'T') {
 					marks += 2;
 				}
 				write << ch;
@@ -93,33 +86,27 @@ bool writex() {
 
 			if (result >= 90 && result <= 100) {
 				write << left << setw(5) << "A" << endl;
-			}
-			else if (result >= 80 && result <= 89.99) {
+			} else if (result >= 80 && result <= 89.99) {
 				write << left << setw(5) << "B" << endl;
-			}
-			else if (result >= 70 && result <= 79.99) {
+			} else if (result >= 70 && result <= 79.99) {
 				write << left << setw(5) << "C" << endl;
-			}
-			else if (result >= 60 && result <= 69.99) {
+			} else if (result >= 60 && result <= 69.99) {
 				write << left << setw(5) << "D" << endl;
-			}
-			else if (result <= 59.99) {
+			} else if (result <= 59.99) {
 				write << left << setw(5) << "F" << endl;
 			}
 		}
 		read.close();
 		write.close();
-		return true; 
-	}
-	else {
-		cout << "'Test.txt' not found." << endl;
-		system("pause"); 
+		return true;
+	} else {
+		cout << "'test.txt' not found." << endl;
+		system("pause");
 		return false;
 	}
 }
 void display() {
-
-	fstream read("Result.txt", ios::in);
+	fstream read("result.txt", ios::in);
 	if (read) {
 		char header[100];
 		read.getline(header, 100);
@@ -138,13 +125,12 @@ void display() {
 			cout << left << setw(14) << roll << setw(22) << card << setw(12) << marks << setw(7) << ch << endl;
 		}
 		read.close();
-	}
-	else {
-		cout << "'Result.txt' not found." << endl;
+	} else {
+		cout << "'result.txt' not found." << endl;
 	}
 }
 void lowest() {
-	fstream read("Result.txt", ios::in);
+	fstream read("result.txt", ios::in);
 	if (read) {
 		char header[100];
 		read.getline(header, 100);
@@ -177,22 +163,21 @@ void lowest() {
 		}
 		cout << "The roll number with the lowest marks is: " << lowest << " with " << min << " %" << endl;
 		read.close();
-	}
-	else {
-		cout << "'Result.txt' not found." << endl;
+	} else {
+		cout << "'result.txt' not found." << endl;
 	}
 }
 void descending() {
-	fstream read("Result.txt", ios::in);
+	fstream read("result.txt", ios::in);
 	if (read) {
 		char header[100];
-		read.getline(header, 100); 
+		read.getline(header, 100);
 
 		char roll[20];
 		char card[30];
 		char grade[10];
-		float marks[200]; 
-		int order[200];   
+		float marks[200];
+		int order[200];
 
 		float percentage;
 
@@ -206,7 +191,7 @@ void descending() {
 			read.getline(grade, 10);
 
 			marks[i] = percentage;
-			order[i] = i;          
+			order[i] = i;
 			i++;
 		}
 		read.close();
@@ -225,10 +210,10 @@ void descending() {
 		cout << left << setw(14) << "Roll No" << setw(22) << "Test card" << setw(12) << "Percentage" << setw(7) << "Grade" << endl;
 
 		for (int j = 0; j < i; j++) {
-			fstream read("Result.txt", ios::in);
-			read.getline(header, 100); 
+			fstream read("result.txt", ios::in);
+			read.getline(header, 100);
 
-			int index = order[j]; 
+			int index = order[j];
 
 			for (int k = 0; k <= index; k++) {
 				read.getline(roll, 20, ',');
@@ -243,13 +228,12 @@ void descending() {
 			cout << left << setw(14) << roll << setw(22) << card << setw(12) << percentage << setw(7) << grade << endl;
 			read.close();
 		}
-	}
-	else {
-		cout << "'Result.txt' not found." << endl;
+	} else {
+		cout << "'result.txt' not found." << endl;
 	}
 }
 void search() {
-	fstream read("Result.txt", ios::in);
+	fstream read("result.txt", ios::in);
 	if (read) {
 		char header[100];
 		read.getline(header, 100);
@@ -304,8 +288,7 @@ void search() {
 		if (!found) {
 			cout << "Record not found." << endl;
 		}
+	} else {
+		cout << "'result.txt' not found." << endl;
 	}
-		else {
-			cout << "'Result.txt' not found." << endl;
-		}
 }

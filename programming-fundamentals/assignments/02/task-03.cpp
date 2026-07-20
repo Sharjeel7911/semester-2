@@ -1,5 +1,5 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 using namespace std;
 
 void readx();
@@ -12,10 +12,10 @@ void task3() {
 }
 
 void dictionaryspell() {
-	fstream check("Dictionary.txt", ios::in);
-	fstream write("Update.txt", ios::out);
+	fstream check("dictionary.txt", ios::in);
+	fstream write("update.txt", ios::out);
 	if (!check || !write) {
-		cout << "Error: 'Dictionary.txt' not found." << endl;
+		cout << "Error: 'dictionary.txt' not found." << endl;
 		return;
 	}
 
@@ -31,11 +31,11 @@ void dictionaryspell() {
 
 	check.close();
 	write.close();
-	remove("Dictionary.txt");
-	(void)rename("Update.txt", "Dictionary.txt");
+	remove("dictionary.txt");
+	(void)rename("update.txt", "dictionary.txt");
 }
 void readx() {
-	fstream read("Input.txt", ios::in);
+	fstream read("input.txt", ios::in);
 	if (read) {
 		char wordx[100] = {};
 		char word[100] = {};
@@ -61,13 +61,12 @@ void readx() {
 			spellcheck(word);
 		}
 		read.close();
-	}
-	else {
-		cout << "'Input.txt' not found." << endl;
+	} else {
+		cout << "'input.txt' not found." << endl;
 	}
 }
 void spellcheck(char array[]) {
-	fstream check("Dictionary.txt", ios::in);
+	fstream check("dictionary.txt", ios::in);
 	if (check) {
 		char word[100] = {};
 		bool found = false;
@@ -91,8 +90,7 @@ void spellcheck(char array[]) {
 		}
 
 		check.close();
-	}
-	else {
-		cout << "'Dictionary.txt' not found." << endl;
+	} else {
+		cout << "'dictionary.txt' not found." << endl;
 	}
 }
