@@ -94,7 +94,7 @@ void deallocate_matrix(int** mat, int rows) {
 }
 
 void add_matrices() {
-	ifstream read("Data.txt");
+	ifstream read("data.txt");
 	int r1, c1, r2, c2;
 	read >> r1 >> c1;
 	int** a = allocate_matrix(r1, c1);
@@ -120,7 +120,7 @@ void add_matrices() {
 	read.close();
 }
 void display_diagonal() {
-	ifstream read("Data.txt");
+	ifstream read("data.txt");
 	int r, c;
 	read >> r >> c;
 	int** mat = allocate_matrix(r, c);
@@ -134,7 +134,7 @@ void display_diagonal() {
 	read.close();
 }
 void column_wise() {
-	ifstream read("Data.txt");
+	ifstream read("data.txt");
 	int r, c;
 	read >> r >> c;
 	int** mat = allocate_matrix(r, c);
@@ -150,7 +150,7 @@ void column_wise() {
 	read.close();
 }
 void sort_rows() {
-	ifstream read("Data.txt");
+	ifstream read("data.txt");
 	int r, c;
 	read >> r >> c;
 	int** mat = allocate_matrix(r, c);
@@ -176,7 +176,7 @@ void sort_rows() {
 	read.close();
 }
 void sum_rows_cols() {
-	ifstream read("Data.txt");
+	ifstream read("data.txt");
 	int r, c;
 	read >> r >> c;
 	int** mat = allocate_matrix(r, c);
